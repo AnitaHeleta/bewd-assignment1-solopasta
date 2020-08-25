@@ -1,5 +1,6 @@
 <?php 
-    require "../../config.php"; 
+
+require "../../config.php"; 
     
 
 if (isset($_GET['id'])) {
@@ -25,6 +26,7 @@ if (isset($_GET['id'])) {
             // attach the sql statement to the new work variable so we can access it in the form
             $recipe = $statement->fetch();
             
+                     
         } catch(PDOExcpetion $error) {
             echo $sql . "<br>" . $error->getMessage();
         }

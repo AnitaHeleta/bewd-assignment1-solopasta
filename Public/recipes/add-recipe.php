@@ -1,4 +1,5 @@
 <?php
+session_start();
 // this code will only execute after the submit button is clicked
 if (isset($_POST['submit'])) {
 // include the config file that we created before
@@ -15,10 +16,11 @@ $new_recipe = array(
 "type" => $_POST['type'],
 "description" => $_POST['description'],
 "directions" => $_POST ['directions'],
+"userId" => $_SESSION["id"],
 );
 
 // THIRD: Turn the array into a SQL statement
-$sql = "INSERT INTO recipes (name, type, description, directions) VALUES (:name, :type, :description, :directions)";
+$sql = "INSERT INTO recipes (name, type, description, directions, user_id) VALUES (:name, :type, :description, :directions, :userId)";
 
 // FOURTH: Now write the SQL to the database
 $statement = $connection->prepare($sql);
@@ -42,7 +44,7 @@ echo $sql . "<br>" . $error->getMessage();
 <!--form to collect data for each recipe-->
 <form method="post">
 
-    <label for="name">Recipe Name</label>
+    <label for="name">Name</label>
     <input type="text" name="name" id="name">
 
     <label for="type">Type</label>

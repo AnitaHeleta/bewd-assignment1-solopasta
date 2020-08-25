@@ -17,23 +17,21 @@ require "../common.php";
             echo $sql . "<br>" . $error->getMessage();
         }
         
-           $recipe =[
+           $recipes =[
       "id"         => $_POST['id'],
       "name"        => $_POST['name'],
       "type"        => $_POST['type'],
       "description"   => $_POST['description'],
-      "ingredients"   => $_POST['ingredients'],
-               "directions" => $_POST['directions'],
+      "directions" => $_POST['directions'],
       "date"   => $_POST['date'],
     ];
 
     // create SQL statement
-    $sql = "UPDATE `recipe` 
+    $sql = "UPDATE `recipes` 
             SET id = :id, 
                 name = :name, 
                 type = :type, 
                 description = :description, 
-                ingredients = :ingredients,
                 directions = :directions, 
                 date = :date 
             WHERE id = :id";
@@ -42,7 +40,7 @@ require "../common.php";
     $statement = $connection->prepare($sql);
 
     //execute sql statement
-    $statement->execute($work);
+    $statement->execute($recipes);
         
         echo "<p>Edit Successful!</p>";
         
@@ -89,25 +87,24 @@ require "../common.php";
  <label for="id">ID</label>
     <input type="text" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
     
-    <label for="artistname">Artist Name</label>
-    <input type="text" name="artistname" id="artistname" value="<?php echo escape($work['artistname']); ?>">
+    <label for="type">Name</label>
+    <input type="text" name="name" id="name" value="<?php echo escape($work['name']); ?>">
 
-    <label for="worktitle">Work Title</label>
-    <input type="text" name="worktitle" id="worktitle" value="<?php echo escape($work['worktitle']); ?>">
+    <label for="type">Type</label>
+    <input type="text" name="type" id="type" value="<?php echo escape($work['type']); ?>">
 
-    <label for="workdate">Work Date</label>
-    <input type="text" name="workdate" id="workdate" value="<?php echo escape($work['workdate']); ?>">
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description" value="<?php echo escape($work['description']); ?>">
 
-    <label for="worktype">Work Type</label>
-    <input type="text" name="worktype" id="worktype" value="<?php echo escape($work['worktype']); ?>">
+    <label for="directions">Directions</label>
+    <input type="text" name="directions" id="directions" value="<?php echo escape($work['directions']); ?>">
     
-    <label for="date">Work Date</label>
+    
+    <label for="date">Date</label>
     <input type="text" name="date" id="date" value="<?php echo escape($work['date']); ?>">
 
     <input type="submit" name="submit" value="Save">
     
-    
-
 </form>
 
 <?php include "../templates/footer.php"; ?>

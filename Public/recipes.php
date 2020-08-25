@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require "../config.php"; 
     
     // this is called a try/catch statement 
@@ -6,12 +7,15 @@
         // FIRST: Connect to the database
         $connection = new PDO($dsn, $username, $password, $options);
 		
+        $userId = $_SESSION["id"];
         // SECOND: Create the SQL 
         #Find all recipes
-        $sql = "SELECT * FROM recipes";
+        $sql = "SELECT * FROM recipes where user_id = :user_id";
         
         // THIRD: Prepare the SQL
         $statement = $connection->prepare($sql);
+        $statement->bindValue(':user_id', $userId);
+
         $statement->execute();
         
         // FOURTH: Put it into a $result object that we can access in the page
