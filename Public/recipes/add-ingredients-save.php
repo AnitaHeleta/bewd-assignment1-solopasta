@@ -1,0 +1,28 @@
+<?php
+session_start();
+if (isset($_POST['submit'])) {
+    require "../../config.php";
+    try {
+        $connection = new PDO($dsn, $username, $password, $options);
+        $recipe_id = $_POST['recipe_id'];
+        $new_ingredient = array(
+            "recipe_id" => $recipe_id,
+            "quantity" => $_POST ['quantity'],
+            "measurement" => $_POST ['measurement'],
+            "ingredient" => $_POST ['ingredient'],
+        );
+
+        $sql = "INSERT INTO recipe_ingredients(recipe_id, ingredient, quantity, measurement) VALUES (:recipe_id, :ingredient, :quantity, :measurement)";
+        $insert_ingredient = $connection->prepare($sql);
+        $insert_ingredient->execute($new_ingredient);
+        header("location: add-ingredients.php?id=" . $recipe_id);
+    } catch (PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
+} else {
+    header("location: add-recipe.php");
+}
+?>
+
+
+
