@@ -3,7 +3,7 @@
 <?php
 
 // include the config file that we created before
-require "../config.php";
+require_once "../config.php";
 
 // this is called a try/catch statement
 try {

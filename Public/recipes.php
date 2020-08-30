@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../config.php";
+require_once "../config.php";
 
 // this is called a try/catch statement
 try {
@@ -39,8 +39,9 @@ try {
         <p>
             Recipe Name: <?php echo $row['name']; ?><br>
             <a href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>">View</a>
-            <a href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>">Update</a>
-            <a href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>">Delete</a>
+            <a href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>">Edit</a>
+            <a href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>" onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"]?>\'')"
+            >Delete</a>
         </p>
 
 

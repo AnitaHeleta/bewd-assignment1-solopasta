@@ -1,7 +1,8 @@
 <?php
 
 // include the config file that we created before
-require "../../config.php";
+require_once "../common.php";
+require_once "../../config.php";
 
 if (isset($_GET['id'])) {
     try {
@@ -25,7 +26,7 @@ if (isset($_GET['id'])) {
 
         $result = "Item deleted";
 
-        header("location: ../recipes.php");
+        redirectTo("recipes.php");
 
     } catch (PDOExcpetion $error) {
         echo $sql . "<br>" . $error->getMessage();

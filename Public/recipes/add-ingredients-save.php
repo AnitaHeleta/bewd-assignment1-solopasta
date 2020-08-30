@@ -1,7 +1,8 @@
 <?php
+require_once "../common.php";
 session_start();
 if (isset($_POST['submit'])) {
-    require "../../config.php";
+    require_once "../../config.php";
     try {
         $connection = new PDO($dsn, $username, $password, $options);
         $recipe_id = $_POST['recipe_id'];
@@ -15,12 +16,12 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO recipe_ingredients(recipe_id, ingredient, quantity, measurement) VALUES (:recipe_id, :ingredient, :quantity, :measurement)";
         $insert_ingredient = $connection->prepare($sql);
         $insert_ingredient->execute($new_ingredient);
-        header("location: add-ingredients.php?id=" . $recipe_id);
+        redirectTo("recipes/add-ingredients.php?id=" . $recipe_id);
     } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
 } else {
-    header("location: add-recipe.php");
+    redirectTo("recipes/add-recipe.php");
 }
 ?>
 

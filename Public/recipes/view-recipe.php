@@ -1,6 +1,6 @@
 <?php
 
-require "../../config.php";
+require_once "../../config.php";
 
 
 if (isset($_GET['id'])) {
@@ -36,9 +36,9 @@ if (isset($_GET['id'])) {
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
 
     <h2><?php echo $recipe['name']; ?></h2>
-    <p>Type: <?php echo $recipe['type']; ?><p>
-    <p>Description: <?php echo $recipe['description']; ?><p>
-    <h2>Ingredients</h2>
+    <h3><?php echo $recipe['type']; ?><h3>
+    <h3><?php echo $recipe['description']; ?><h3>
+    <h3>Ingredients</h3>
     <ul>
         <?php foreach ($ingredients as $ingredient) { ?>
             <li>
@@ -49,7 +49,9 @@ if (isset($_GET['id'])) {
         <?php }; //close foreach?>
     </ul>
 
-    <h2>Process</h2>
+    <h3>Process</h3>
     <p><?php echo $recipe['directions']; ?></p>
 <?php }; //close if?>
+
+
 <?php include "../templates/footer.php"; ?>

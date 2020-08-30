@@ -1,11 +1,12 @@
 <?php
+require_once "../common.php";
 session_start();
 // this code will only execute after the submit button is clicked
 if (!isset($_GET['id'])) {
-    header("location: add-recipe.php");
+    redirectTo("recipes/add-recipe.php");
 }
 // include the config file that we created before
-require "../../config.php";
+require_once "../../config.php";
 $id = $_GET['id'];
 try {
     $connection = new PDO($dsn, $username, $password, $options);
@@ -21,7 +22,7 @@ try {
 ?>
 <?php include "../templates/header.php"; ?>
 
-<h2>Ingredients</h2>
+<h3>Ingredients</h3>
 <ul>
     <?php foreach ($ingredients as $ingredient) { ?>
         <li>

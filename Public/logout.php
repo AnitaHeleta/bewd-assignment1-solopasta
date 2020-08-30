@@ -1,4 +1,5 @@
 <?php
+require_once "common.php";
 // Initialize the session
 session_start();
 
@@ -9,6 +10,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to login page
-header("location: login.php");
+redirectTo("index.php");
 exit;
 ?>

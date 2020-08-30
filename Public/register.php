@@ -1,6 +1,7 @@
 <?php
 
 // Include config file
+require_once "common.php";
 require_once "../config.php";
 
 // Define variables and initialize with empty values
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 // Redirect to login page
-                header("location: login.php");
+                redirectTo("login.php");
             } else {
                 echo "Something went wrong. Please try again later.";
             }

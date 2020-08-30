@@ -1,6 +1,5 @@
 <?php
-
-
+$root_url = "http://localhost/bewd-assignment1-solopasta/Public";
 $host = "localhost";
 $username = "root";
 $password = "root";
