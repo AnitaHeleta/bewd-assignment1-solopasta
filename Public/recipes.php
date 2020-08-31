@@ -27,33 +27,23 @@ try {
 }
 ?>
 
-
 <?php include "templates/header.php"; ?>
-<h2>My Recipes</h2>
+<h2>My Recipes <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a></h2>
 
-<a href="recipes/add-recipe.php">Creat New Recipe</a>
-
+</br>
 <?php if ($result && $statement->rowCount() > 0) { ?>
     <?php foreach ($result as $row) { ?>
-
         <p>
-            Recipe Name: <?php echo $row['name']; ?><br>
-            <a href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>">View</a>
-            <a href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>">Edit</a>
-            <a href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>" onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"]?>\'')"
-            >Delete</a>
+            Recipe Name: <?php echo $row['name']; ?>
+            <a class="glyphicon glyphicon-eye-open"
+               href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>" ></a>
+            <a class="glyphicon glyphicon-edit"
+               href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>" ></a>
+            <a class="glyphicon glyphicon-remove"
+               href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>"
+               onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"]?>\'')" ></a>
         </p>
-
-
-        <hr>
-
-    <?php }; //close the foreach
-};
+    <?php } //close the foreach
+}
 ?>
-
-<form method="post">
-
-
-</form>
-
 <?php include "templates/footer.php"; ?>

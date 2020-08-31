@@ -12,6 +12,7 @@ CREATE TABLE recipes (
 );
 
 CREATE TABLE recipe_ingredients (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     recipe_id INT(10) NOT NULL,
     quantity DECIMAL(10,3) NOT NULL,
 	measurement VARCHAR(50) NOT NULL,

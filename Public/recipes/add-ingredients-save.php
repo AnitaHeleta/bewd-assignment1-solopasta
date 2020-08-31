@@ -16,7 +16,11 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO recipe_ingredients(recipe_id, ingredient, quantity, measurement) VALUES (:recipe_id, :ingredient, :quantity, :measurement)";
         $insert_ingredient = $connection->prepare($sql);
         $insert_ingredient->execute($new_ingredient);
-        redirectTo("recipes/add-ingredients.php?id=" . $recipe_id);
+        if(isset($_POST["edit"])){
+            redirectTo("recipes/edit-recipe.php?id=" . $recipe_id);
+        } else{
+            redirectTo("recipes/add-ingredients.php?id=" . $recipe_id);
+        }
     } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }

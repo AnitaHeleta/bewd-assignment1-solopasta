@@ -87,7 +87,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($pdo_connection);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

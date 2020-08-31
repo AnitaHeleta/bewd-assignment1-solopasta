@@ -1,8 +1,5 @@
 <?php
-
 require_once "../../config.php";
-
-
 if (isset($_GET['id'])) {
     try {
         // standard db connection
@@ -32,12 +29,11 @@ if (isset($_GET['id'])) {
 ?>
 
 <?php include "../templates/header.php"; ?>
-
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
 
     <h2><?php echo $recipe['name']; ?></h2>
-    <h3><?php echo $recipe['type']; ?><h3>
-    <h3><?php echo $recipe['description']; ?><h3>
+    <h3><?php echo $recipe['type']; ?></h3>
+    <h3><?php echo $recipe['description']; ?></h3>
     <h3>Ingredients</h3>
     <ul>
         <?php foreach ($ingredients as $ingredient) { ?>

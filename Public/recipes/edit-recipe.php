@@ -69,10 +69,6 @@ if (isset($_GET['id'])) {
         <br>
         <label for="description">Description</label>
         <input type="text" name="description" id="description" value="<?php echo escape($recipe['description']); ?>">
-        <br>
-        <label for="directions">Directions</label>
-        <input type="text" name="directions" id="directions" value="<?php echo escape($recipe['directions']); ?>">
-        <br>
         <h3>Ingredients</h3>
         <ul>
             <?php foreach ($ingredients as $ingredient) { ?>
@@ -80,11 +76,32 @@ if (isset($_GET['id'])) {
                     <?php echo $ingredient['quantity']; ?>
                     <?php echo $ingredient['measurement']; ?> of
                     <?php echo $ingredient['ingredient']; ?>
+                    <a class="glyphicon glyphicon-remove"
+                       href="delete-ingredient.php?id=<?php echo $ingredient["id"] ?>&recipe_id=<?php echo $id ?>"></a>
                 </li>
             <?php }; //close foreach?>
         </ul>
-        <input type="submit" name="submit" value="Save">
-        </form>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity">
+        <label for="measurement">Measurement</label>
+        <input type="text" name="measurement" id="measurement">
+        <label for="ingredients">Ingredient</label>
+        <input type="text" name="ingredient" id="ingredient">
+        <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
+        <input type="hidden" name="edit" value="true">
+        <input formaction="add-ingredients-save.php"
+               formmethod="post"
+               type="submit"
+               name="submit"
+               value="Add Ingredient">
+        <br>
+        <br>
+        <h3>Process</h3>
+        <input type="text" name="directions" id="directions" value="<?php echo escape($recipe['directions']); ?>">
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Save Recipe">
     </form>
 
 
