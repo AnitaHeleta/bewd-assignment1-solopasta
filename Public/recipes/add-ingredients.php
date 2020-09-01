@@ -22,8 +22,8 @@ try {
 ?>
 <!doctype html>
 <html lang="en">
-<?php include "../templates/header.php"; ?>
 <body>
+<?php include "../templates/header.php"; ?>
 <h3>Ingredients</h3>
 <ul>
     <?php foreach ($ingredients as $ingredient) { ?>

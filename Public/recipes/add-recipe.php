@@ -29,8 +29,8 @@ if (isset($_POST['submit'])) {
 
 <!doctype html>
 <html lang="en">
-<?php include "../templates/header.php"; ?>
 <body>
+<?php include "../templates/header.php"; ?>
 <h3>Add a Recipe</h3>
 
 <!--form to collect data for each recipe-->

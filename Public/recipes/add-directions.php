@@ -26,8 +26,8 @@ if (isset($_POST['submit'])) {
 ?>
 <!doctype html>
 <html lang="en">
-<?php include "../templates/header.php"; ?>
 <body>
+<?php include "../templates/header.php"; ?>
 <h3>Process</h3>
 <form method="post">
     <input type="text" name="directions" id="directions">

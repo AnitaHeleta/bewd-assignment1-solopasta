@@ -59,8 +59,8 @@ if (isset($_GET['id'])) {
 ?>
 <!doctype html>
 <html lang="en">
-<?php include "../templates/header.php"; ?>
 <body>
+<?php include "../templates/header.php"; ?>
 <form method="post">
     <input type="hidden" name="id" value="<?php echo $id ?>">
     <label for="name">Name</label>

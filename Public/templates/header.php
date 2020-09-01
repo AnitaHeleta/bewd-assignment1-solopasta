@@ -5,8 +5,6 @@ session_start();
 ensure_loggedIn();
 ?>
 <?php include "html_head.php" ?>
-
-<body>
 <header>
 
     <header>
@@ -38,4 +36,3 @@ ensure_loggedIn();
            class="btn btn-danger"></a>
     </p>
 </header>
-</body>

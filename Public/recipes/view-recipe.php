@@ -29,8 +29,8 @@ if (isset($_GET['id'])) {
 ?>
 <!doctype html>
 <html lang="en">
-<?php include "../templates/header.php"; ?>
 <body>
+<?php include "../templates/header.php"; ?>
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
 
     <h2><?php echo $recipe['name']; ?></h2>
