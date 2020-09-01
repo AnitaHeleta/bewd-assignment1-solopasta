@@ -36,15 +36,22 @@ try {
             <?php }; //close foreach?>
         </ul>
         <!--form to collect data for each recipe-->
-        <form action="add-ingredients-save.php" method="post">
-            <label for="quantity">Quantity</label>
-            <input type="number" name="quantity" id="quantity">
-            <br>
-            <label for="measurement">Measurement</label>
-            <input type="text" name="measurement" id="measurement">
-            <br>
-            <label for="ingredients">Ingredient</label>
-            <input type="text" name="ingredient" id="ingredient">
+        <form action="add-ingredients-save.php" method="post" rule="form" data-toggle="validator">
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" type="number" value="" required="required" data-error="Please enter a quantity">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="measurement">Measurement</label>
+                <input type="text" name="measurement" id="measurement" type="text" value="" required="required" data-error="Please enter measurement">
+                 <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredient</label>
+                <input type="text" name="ingredient" id="ingredient" type="text" value="" required="required" data-error="Please enter an ingredient">
+                <div class="help-block with-errors"></div>
+            </div>
             <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
             <br>
             <input type="submit" name="submit" value="Add Ingredient">
