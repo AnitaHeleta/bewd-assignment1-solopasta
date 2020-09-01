@@ -27,9 +27,10 @@ try {
 }
 ?>
 
+<!doctype html>
+<html lang="en">
 <?php include "templates/header.php"; ?>
 <h2>My Recipes <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a></h2>
-
 </br>
 <?php if ($result && $statement->rowCount() > 0) { ?>
     <?php foreach ($result as $row) { ?>
@@ -47,3 +48,4 @@ try {
 }
 ?>
 <?php include "templates/footer.php"; ?>
+</html>

@@ -26,8 +26,11 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-<?php include "../templates/header.php"; ?>
 
+<!doctype html>
+<html lang="en">
+<?php include "../templates/header.php"; ?>
+<body>
 <h3>Add a Recipe</h3>
 
 <!--form to collect data for each recipe-->
@@ -45,3 +48,5 @@ if (isset($_POST['submit'])) {
 </form>
 
 <?php include "../templates/footer.php"; ?>
+</body>
+</html>

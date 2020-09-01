@@ -15,7 +15,3 @@ if (isset($_SESSION["loggedin"])) {
     redirectTo("recipes.php");
 }
 ?>
-
-
-
-

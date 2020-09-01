@@ -20,8 +20,10 @@ try {
     echo $sql . "<br>" . $error->getMessage();
 }
 ?>
+<!doctype html>
+<html lang="en">
 <?php include "../templates/header.php"; ?>
-
+<body>
 <h3>Ingredients</h3>
 <ul>
     <?php foreach ($ingredients as $ingredient) { ?>
@@ -46,7 +48,7 @@ try {
     <br>
     <input type="submit" name="submit" value="Add Ingredient">
 </form>
-
-<a c href="<?php echo "add-directions.php?id=" . $id?>">No More Ingredients</a>
-
+<a c href="<?php echo "add-directions.php?id=" . $id ?>">No More Ingredients</a>
 <?php include "../templates/footer.php"; ?>
+</body>
+</html>

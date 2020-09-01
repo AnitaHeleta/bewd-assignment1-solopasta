@@ -2,7 +2,7 @@
 require_once "../common.php";
 session_start();
 // this code will only execute after the submit button is clicked
-if(!isset($_GET['id'])){
+if (!isset($_GET['id'])) {
     redirectTo("recipes/add-recipe.php");
 }
 if (isset($_POST['submit'])) {
@@ -24,12 +24,15 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<!doctype html>
+<html lang="en">
 <?php include "../templates/header.php"; ?>
-
+<body>
 <h3>Process</h3>
 <form method="post">
     <input type="text" name="directions" id="directions">
     <input type="submit" name="submit" value="Submit">
 </form>
-
 <?php include "../templates/footer.php"; ?>
+</body>
+</html>

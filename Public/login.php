@@ -1,5 +1,4 @@
 <?php
-
 require_once "common.php";
 // Initialize the session or resume session
 session_start();
@@ -9,7 +8,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     redirectTo("index.php");
     exit;
 }
-
 // Include config file
 require_once "../config.php";
 
@@ -87,11 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($pdo_connection);
 }
 ?>
+
+<!doctype html>
+<html lang="en">
 <?php include "templates/html_head.php" ?>
-
-
 <body>
-
 <header>
     <a href="<?php echo normalize_url("index.php") ?>">
         <img id="logo" src="<?php echo normalize_url("assets/css/img/logo.png") ?>">

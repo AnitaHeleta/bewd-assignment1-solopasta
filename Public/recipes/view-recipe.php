@@ -27,8 +27,10 @@ if (isset($_GET['id'])) {
     header('location: index.html');
 }
 ?>
-
+<!doctype html>
+<html lang="en">
 <?php include "../templates/header.php"; ?>
+<body>
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
 
     <h2><?php echo $recipe['name']; ?></h2>
@@ -48,6 +50,6 @@ if (isset($_GET['id'])) {
     <h3>Process</h3>
     <p><?php echo $recipe['directions']; ?></p>
 <?php }; //close if?>
-
-
 <?php include "../templates/footer.php"; ?>
+</body>
+</html>
