@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         $recipe_id = $_GET['id'];
         $args = array(
             "id" => $recipe_id,
-            "directions" => $_POST ['directions']
+            "directions" => $_POST ['process']
         );
         $sql = "UPDATE recipes set directions = :directions where id = :id";
         $add_directions = $connection->prepare($sql);
