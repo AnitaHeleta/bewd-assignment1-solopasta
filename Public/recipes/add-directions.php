@@ -27,10 +27,14 @@ if (isset($_POST['submit'])) {
 
 <?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
-<h3>Process</h3>
-<form method="post">
-    <input type="text" name="directions" id="directions">
-    <input type="submit" name="submit" value="Submit">
-</form>
+<div class="row">
+    <div class="col">
+        <h3>Process</h3>
+        <form method="post">
+            <input type="text" name="directions" id="directions">
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+</div>
 <?php include "../templates/footer.php"; ?>
 <?php include "../templates/html_foot.php"; ?>

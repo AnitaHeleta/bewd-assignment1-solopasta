@@ -23,30 +23,34 @@ try {
 <!-- HTML DOC-->
 <?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
-<h3>Ingredients</h3>
-<ul>
-    <?php foreach ($ingredients as $ingredient) { ?>
-        <li>
-            <?php echo $ingredient['quantity']; ?>
-            <?php echo $ingredient['measurement']; ?> of
-            <?php echo $ingredient['ingredient']; ?>
-        </li>
-    <?php }; //close foreach?>
-</ul>
-<!--form to collect data for each recipe-->
-<form action="add-ingredients-save.php" method="post">
-    <label for="quantity">Quantity</label>
-    <input type="number" name="quantity" id="quantity">
-    <br>
-    <label for="measurement">Measurement</label>
-    <input type="text" name="measurement" id="measurement">
-    <br>
-    <label for="ingredients">Ingredient</label>
-    <input type="text" name="ingredient" id="ingredient">
-    <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
-    <br>
-    <input type="submit" name="submit" value="Add Ingredient">
-</form>
-<a c href="<?php echo "add-directions.php?id=" . $id ?>">No More Ingredients</a>
+<div class="row">
+    <div class="col">
+        <h3>Ingredients</h3>
+        <ul>
+            <?php foreach ($ingredients as $ingredient) { ?>
+                <li>
+                    <?php echo $ingredient['quantity']; ?>
+                    <?php echo $ingredient['measurement']; ?> of
+                    <?php echo $ingredient['ingredient']; ?>
+                </li>
+            <?php }; //close foreach?>
+        </ul>
+        <!--form to collect data for each recipe-->
+        <form action="add-ingredients-save.php" method="post">
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity" id="quantity">
+            <br>
+            <label for="measurement">Measurement</label>
+            <input type="text" name="measurement" id="measurement">
+            <br>
+            <label for="ingredients">Ingredient</label>
+            <input type="text" name="ingredient" id="ingredient">
+            <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
+            <br>
+            <input type="submit" name="submit" value="Add Ingredient">
+        </form>
+        <a c href="<?php echo "add-directions.php?id=" . $id ?>">No More Ingredients</a>
+    </div>
+</div>
 <?php include "../templates/footer.php"; ?>
 <?php include "../templates/html_foot.php"; ?>

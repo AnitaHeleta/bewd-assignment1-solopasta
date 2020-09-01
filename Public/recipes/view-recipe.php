@@ -30,24 +30,29 @@ if (isset($_GET['id'])) {
 <!-- HTML DOC-->
 <?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
+
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
+    <div class="row">
+        <div class="col">
+            <h2><?php echo $recipe['name']; ?></h2>
+            <h3><?php echo $recipe['type']; ?></h3>
+            <h3><?php echo $recipe['description']; ?></h3>
+            <h3>Ingredients</h3>
+            <ul>
+                <?php foreach ($ingredients as $ingredient) { ?>
+                    <li>
+                        <?php echo $ingredient['quantity']; ?>
+                        <?php echo $ingredient['measurement']; ?> of
+                        <?php echo $ingredient['ingredient']; ?>
+                    </li>
+                <?php }; //close foreach?>
+            </ul>
 
-    <h2><?php echo $recipe['name']; ?></h2>
-    <h3><?php echo $recipe['type']; ?></h3>
-    <h3><?php echo $recipe['description']; ?></h3>
-    <h3>Ingredients</h3>
-    <ul>
-        <?php foreach ($ingredients as $ingredient) { ?>
-            <li>
-                <?php echo $ingredient['quantity']; ?>
-                <?php echo $ingredient['measurement']; ?> of
-                <?php echo $ingredient['ingredient']; ?>
-            </li>
-        <?php }; //close foreach?>
-    </ul>
-
-    <h3>Process</h3>
-    <p><?php echo $recipe['directions']; ?></p>
+            <h3>Process</h3>
+            <p><?php echo $recipe['directions']; ?></p>
+        </div>
+    </div>
 <?php }; //close if?>
+
 <?php include "../templates/footer.php"; ?>
 <?php include "../templates/html_foot.php"; ?>

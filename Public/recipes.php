@@ -29,24 +29,22 @@ try {
 
 <?php include "templates/html_head.php" ?>
 <?php include "templates/header.php"; ?>
-<div class="wrapper">
-    <h2>My Recipes <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a></h2>
-    </br>
-    <?php if ($result && $statement->rowCount() > 0) { ?>
-        <?php foreach ($result as $row) { ?>
-            <p>
-                Recipe Name: <?php echo $row['name']; ?>
-                <a class="glyphicon glyphicon-eye-open"
-                   href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>"></a>
-                <a class="glyphicon glyphicon-edit"
-                   href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>"></a>
-                <a class="glyphicon glyphicon-remove"
-                   href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>"
-                   onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"] ?>\'')"></a>
-            </p>
-        <?php } //close the foreach
-    }
-    ?>
-    <?php include "templates/footer.php"; ?>
-</div>
+<h2>My Recipes <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a></h2>
+</br>
+<?php if ($result && $statement->rowCount() > 0) { ?>
+    <?php foreach ($result as $row) { ?>
+        <p>
+            Recipe Name: <?php echo $row['name']; ?>
+            <a class="glyphicon glyphicon-eye-open"
+               href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>"></a>
+            <a class="glyphicon glyphicon-edit"
+               href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>"></a>
+            <a class="glyphicon glyphicon-remove"
+               href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>"
+               onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"] ?>\'')"></a>
+        </p>
+    <?php } //close the foreach
+}
+?>
+<?php include "templates/footer.php"; ?>
 <?php include "templates/html_foot.php" ?>

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
         $recipe_id = $connection->lastInsertId();
 
-        redirectTo("recipes/add-ingredients.php?id=" . $recipe_id );
+        redirectTo("recipes/add-ingredients.php?id=" . $recipe_id);
     } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
@@ -30,21 +30,24 @@ if (isset($_POST['submit'])) {
 <!-- HTML DOC-->
 <?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
-<h3>Add a Recipe</h3>
+<div class="row">
+    <div class="col">
+        <h3>Add a Recipe</h3>
 
-<!--form to collect data for each recipe-->
-<form method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name">
-    <br>
-    <label for="type">Type</label>
-    <input type="text" name="type" id="type">
-    <br>
-    <label for="description">Description</label>
-    <input type="text" name="description" id="description">
-    <br>
-    <input type="submit" name="submit" value="Submit">
-</form>
-
+        <!--form to collect data for each recipe-->
+        <form method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="type">Type</label>
+            <input type="text" name="type" id="type">
+            <br>
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description">
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+</div>
 <?php include "../templates/footer.php"; ?>
 <?php include "../templates/html_foot.php"; ?>

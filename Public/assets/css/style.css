@@ -3,14 +3,6 @@ body {
     background-color: grey;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 300px;
-    width: 100%;
-}
-
 header div#user {
     float: right;
 }
