@@ -62,17 +62,28 @@ if (isset($_GET['id'])) {
 <?php include "../templates/header.php"; ?>
 <div class="row">
     <div class="col">
-        <form method="post">
+        <form method="post" role="form" data-toggle="validator">
             <input type="hidden" name="id" value="<?php echo $id ?>">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" value="<?php echo escape($recipe['name']); ?>">
-            <br>
-            <label for="type">Type</label>
-            <input type="text" name="type" id="type" value="<?php echo escape($recipe['type']); ?>">
-            <br>
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description"
-                   value="<?php echo escape($recipe['description']); ?>">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="<?php echo escape($recipe['name']); ?>" type="text"
+                       value="" required="required" data-error="Please enter a recipe name">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" name="type" id="type" value="<?php echo escape($recipe['type']); ?>" type="text"
+                       value="" required="required" data-error="Please enter a type of recipe">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <br>
+                <textarea rows="5" cols="50" maxlength="250" name="description" id="description"
+                          placeholder="Description" <?php echo escape($recipe['description']); ?> type="text" value=""
+                          required="required" data-error="Please enter a description"></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
             <h3>Ingredients</h3>
             <ul>
                 <?php foreach ($ingredients as $ingredient) { ?>
@@ -85,26 +96,26 @@ if (isset($_GET['id'])) {
                     </li>
                 <?php }; //close foreach?>
             </ul>
-
+            <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
+            <input type="hidden" name="edit" value="true">
             <label for="quantity">Quantity</label>
             <input type="number" name="quantity" id="quantity">
             <label for="measurement">Measurement</label>
             <input type="text" name="measurement" id="measurement">
             <label for="ingredients">Ingredient</label>
             <input type="text" name="ingredient" id="ingredient">
-            <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
-            <input type="hidden" name="edit" value="true">
             <input formaction="add-ingredients-save.php"
                    formmethod="post"
                    type="submit"
                    name="submit"
                    value="Add Ingredient">
-            <br>
-            <br>
             <h3>Process</h3>
-            <input type="text" name="directions" id="directions" value="<?php echo escape($recipe['directions']); ?>">
-            <br>
-            <br>
+            <div class="form-group">
+                <textarea rows="20" cols="50" maxlength="1000" name="directions" id="directions" placeholder="Process"
+                          type="text" value="<?php echo escape($recipe['directions']); ?>"
+                          required="required" data-error="Please enter the process."></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
             <input type="submit" name="submit" value="Save Recipe">
         </form>
     </div>

@@ -30,9 +30,15 @@ if (isset($_POST['submit'])) {
 <div class="row">
     <div class="col">
         <h3>Process</h3>
-        <form method="post">
-            <input type="text" name="directions" id="directions">
-            <input type="submit" name="submit" value="Submit">
+        <form method="post" role="form" data-toggle="validator">
+            <div class="form-group">
+                <label for="process"></label>
+                <br>
+                <textarea rows="5" cols="50" maxlength="1000" name="process" id="process" placeholder="Process" type="text" value="" required="required" data-error="Please enter a Process"></textarea>
+                <br>
+                 <input type="submit" name="submit" value="Submit">
+                <div class="help-block with-errors"></div>
+            </div>
         </form>
     </div>
 </div>

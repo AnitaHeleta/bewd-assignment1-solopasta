@@ -37,16 +37,16 @@ if (isset($_POST['submit'])) {
         <form method="post" role="form" data-toggle="validator">
             <div class="form-group">
                 <label for="name">Name: </label>
-                <input name="name" id="name" placeholder="Recipe name" type="text" value="" required="required" data-error="Please enter a recipe">
+                <input name="name" id="name" placeholder="Recipe name" type="text" value="" required="required" data-error="Please enter a recipe name">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                 <label for="type">Type: </label>
-                <input name="type" id="type" placeholder="type" type="text" value="" maxlength="30" required="required" data-error="Please enter a type.">
+                <input name="type" id="type" placeholder="type" type="text" value="" maxlength="30" required="required" data-error="Please enter a type of recipe.">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-                <label for="description">Description: </label>
+                <label for="description">Description </label>
                 <br>
                 <textarea rows="5" cols="50" maxlength="250" name="description" id="description" placeholder="Description" type="text" value="" required="required" data-error="Please enter a description."></textarea>
                 <div class="help-block with-errors"></div>
