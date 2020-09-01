@@ -24,9 +24,8 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-<!doctype html>
-<html lang="en">
-<body>
+
+<?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
 <h3>Process</h3>
 <form method="post">
@@ -34,5 +33,4 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 <?php include "../templates/footer.php"; ?>
-</body>
-</html>
+<?php include "../templates/html_foot.php"; ?>

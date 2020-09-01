@@ -57,9 +57,8 @@ if (isset($_GET['id'])) {
     //exit;
 }
 ?>
-<!doctype html>
-<html lang="en">
-<body>
+<!-- HTML DOC-->
+<?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
 <form method="post">
     <input type="hidden" name="id" value="<?php echo $id ?>">
@@ -106,5 +105,4 @@ if (isset($_GET['id'])) {
     <input type="submit" name="submit" value="Save Recipe">
 </form>
 <?php include "../templates/footer.php"; ?>
-</body>
-</html>
+<?php include "../templates/html_foot.php"; ?>

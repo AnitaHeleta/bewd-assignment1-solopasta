@@ -27,9 +27,8 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<!doctype html>
-<html lang="en">
-<body>
+<!-- HTML DOC-->
+<?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
 <h3>Add a Recipe</h3>
 
@@ -48,5 +47,4 @@ if (isset($_POST['submit'])) {
 </form>
 
 <?php include "../templates/footer.php"; ?>
-</body>
-</html>
+<?php include "../templates/html_foot.php"; ?>

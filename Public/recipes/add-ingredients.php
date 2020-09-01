@@ -20,9 +20,8 @@ try {
     echo $sql . "<br>" . $error->getMessage();
 }
 ?>
-<!doctype html>
-<html lang="en">
-<body>
+<!-- HTML DOC-->
+<?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
 <h3>Ingredients</h3>
 <ul>
@@ -50,5 +49,4 @@ try {
 </form>
 <a c href="<?php echo "add-directions.php?id=" . $id ?>">No More Ingredients</a>
 <?php include "../templates/footer.php"; ?>
-</body>
-</html>
+<?php include "../templates/html_foot.php"; ?>
