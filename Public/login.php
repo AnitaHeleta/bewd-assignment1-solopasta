@@ -88,7 +88,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <?php include "templates/html_head.php" ?>
+
+
 <body>
+
+<header>
+    <a href="<?php echo normalize_url("index.php") ?>">
+        <img id="logo" src="<?php echo normalize_url("assets/css/img/logo.png") ?>">
+    </a>
+</header>
 <div id="login">
     <div class="wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

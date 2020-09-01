@@ -5,10 +5,17 @@ session_start();
 ensure_loggedIn();
 ?>
 <?php include "html_head.php" ?>
+
+<body>
 <header>
-    <a href="<?php echo normalize_url("index.php") ?>">
-        <img id="logo" src="<?php echo normalize_url("assets/img/solopastalogo.png") ?>">
-    </a>
+
+    <header>
+        <a href="<?php echo normalize_url("index.php") ?>">
+            <img id="logo" src="<?php echo normalize_url("assets/css/img/logocolour.png") ?>">
+        </a>
+    </header>
+
+    <section>
     <h1>
         Welcome to Solo Pasta
     </h1>
@@ -17,8 +24,10 @@ ensure_loggedIn();
         <figure> Federico Fellini
     </div>
 
+    </section>
+
     <a id="hero" href="<?php echo normalize_url("ïndex.php") ?>">
-        <!--        <img id="heroimage" src="--><?php //echo normalize_url("assets/img/heroimage.jpg") ?><!--">-->
+        <!--  iimg id="heroimage" src="--><?php //echo normalize_url("assets/img/heroimage.jpg") ?><!--">-->
     </a>
 
     <p>
@@ -29,3 +38,4 @@ ensure_loggedIn();
            class="btn btn-danger"></a>
     </p>
 </header>
+</body>

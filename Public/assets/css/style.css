@@ -5,6 +5,8 @@
 iroot {
 }
 
+
+
 body {
     font-family: 'Lato', 'Arial', sans-serif;
 }
@@ -75,12 +77,15 @@ div#login div.wrapper,div#register div.wrapper{
 /* LOGO */
 /* -------------------------------------*/
 
-img#logo{
+#logo{
     height: 50px;
     width: auto;
     float: left;
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 15px;
+}
 
+section {
+    background-color: rebeccapurple;
 }
