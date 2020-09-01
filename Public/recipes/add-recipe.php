@@ -33,18 +33,24 @@ if (isset($_POST['submit'])) {
 <div class="row">
     <div class="col">
         <h3>Add a Recipe</h3>
-
         <!--form to collect data for each recipe-->
-        <form method="post">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name">
-            <br>
-            <label for="type">Type</label>
-            <input type="text" name="type" id="type">
-            <br>
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description">
-            <br>
+        <form method="post" role="form" data-toggle="validator">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input name="name" id="name" placeholder="Recipe name" type="text" value="" required="required" data-error="Please enter a recipe">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="type">Type: </label>
+                <input name="type" id="type" placeholder="type" type="text" value="" maxlength="30" required="required" data-error="Please enter a type.">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description: </label>
+                <br>
+                <textarea rows="5" cols="50" maxlength="250" name="description" id="description" placeholder="Description" type="text" value="" required="required" data-error="Please enter a description."></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
             <input type="submit" name="submit" value="Submit">
         </form>
     </div>
