@@ -37,7 +37,7 @@ try {
         </ul>
         <!--form to collect data for each recipe-->
         <form action="add-ingredients-save.php" method="post" rule="form" data-toggle="validator">
-            <div class="form-group">
+           <div class="form-group">
                 <label for="quantity">Quantity</label>
                 <input type="number" name="quantity" id="quantity" type="number" value="" required="required" data-error="Please enter a quantity">
                 <div class="help-block with-errors"></div>

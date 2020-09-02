@@ -29,22 +29,35 @@ try {
 
 <?php include "templates/html_head.php" ?>
 <?php include "templates/header.php"; ?>
-<h2>My Recipes <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a></h2>
-</br>
+<h2>My Recipes
+    <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a>
+    <a class="glyphicon glyphicon-search" href="recipes/search.php"></a>
+</h2>
 <?php if ($result && $statement->rowCount() > 0) { ?>
-    <?php foreach ($result as $row) { ?>
-        <p>
-            Recipe Name: <?php echo $row['name']; ?>
-            <a class="glyphicon glyphicon-eye-open"
-               href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>"></a>
-            <a class="glyphicon glyphicon-edit"
-               href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>"></a>
-            <a class="glyphicon glyphicon-remove"
-               href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>"
-               onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"] ?>\'')"></a>
-        </p>
-    <?php } //close the foreach
-}
-?>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Recipe Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($result as $row) { ?>
+            <tr>
+                <th><?php echo $row['name']; ?></th>
+                <th>
+                    <a class="glyphicon glyphicon-eye-open"
+                       href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>"></a>
+                    <a class="glyphicon glyphicon-edit"
+                       href="recipes/edit-recipe.php?id=<?php echo $row["id"] ?>"></a>
+                    <a class="glyphicon glyphicon-remove"
+                       href="recipes/delete-recipe.php?id=<?php echo $row["id"] ?>"
+                       onclick="return confirm('Are you sure you want to delete recipe: \'<?php echo $row["name"] ?>\'')"></a>
+                </th>
+            </tr>
+        <?php }  //close the foreach ?>
+        </tbody>
+    </table>
+<?php } ?>
 <?php include "templates/footer.php"; ?>
 <?php include "templates/html_foot.php" ?>

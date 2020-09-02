@@ -34,9 +34,9 @@ if (isset($_GET['id'])) {
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
     <div class="row">
         <div class="col">
-            <h2><?php echo $recipe['name']; ?></h2>
-            <h3><?php echo $recipe['type']; ?></h3>
-            <h3><?php echo $recipe['description']; ?></h3>
+            <h2><?php echo $recipe['name'] ?> </h2>
+            <p><?php echo $recipe['type']; ?></>
+            <p><?php echo $recipe['description']; ?></p>
             <h3>Ingredients</h3>
             <ul>
                 <?php foreach ($ingredients as $ingredient) { ?>

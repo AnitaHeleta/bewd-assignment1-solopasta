@@ -1,11 +1,10 @@
-body {
-    font-family: 'Lato', 'Arial', sans-serif;
-    background-color: lightgrey;
-}
-
 header div#user {
     float: right;
 }
+
+/* -------------------------------------*/
+/* LOGIN - REGISTER */
+/* -------------------------------------*/
 
 span#username{
     font-style: italic;
@@ -13,7 +12,7 @@ span#username{
 }
 
 div#login,div#register {
-    color: white;
+    /*color: white;*/
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/heroimage.jpg);
     background-size: cover;
     background-position: center;
@@ -42,4 +41,28 @@ div#login div.wrapper,div#register div.wrapper{
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 15px;
+}
+/* -------------------------------------*/
+/* QUOTE
+/* -------------------------------------*/
+
+.quote {
+    min-width: 500px;
+    position: absolute;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem
+
+}
+
+
+/* -------------------------------------*/
+/* FOOTER */
+/* -------------------------------------*/
+
+footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
 }
