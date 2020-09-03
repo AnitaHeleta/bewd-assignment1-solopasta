@@ -5,11 +5,16 @@ if (isset($_POST['submit'])) {
     require_once "../../config.php";
     try {
         $connection = new PDO($dsn, $username, $password, $options);
+        $search_by = $_POST['search_by'];
         $search = array(
             "name" => $_POST['name'],
-            "userId" => $_SESSION["id"]
+            "userId" => $_SESSION["id"],
         );
-        $sql = "select * from recipes where user_id = :userId AND name LIKE CONCAT('%', :name, '%')";
+        if($search_by == 'name'){
+            $sql = "select r.id, r.name from recipes r where user_id = :userId AND name LIKE CONCAT('%', :name, '%')";
+        }else{
+            $sql = "select distinct r.name, r.id from recipes r  join recipe_ingredients where user_id = :userId AND name LIKE CONCAT('%', :name, '%')";
+        }
         $getRecipes = $connection->prepare($sql);
         $getRecipes->execute($search);
         $recipes = $getRecipes->fetchAll();
@@ -29,7 +34,6 @@ if (isset($_POST['submit'])) {
                 <thead>
                 <tr>
                     <th>Recipe Name</th>
-                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -38,7 +42,7 @@ if (isset($_POST['submit'])) {
                         <th><?php echo $recipe['name']; ?></th>
                         <th>
                             <a class="glyphicon glyphicon-eye-open"
-                               href="recipes/view-recipe.php?id=<?php echo $recipe["id"] ?>"></a>
+                               href="view-recipe.php?id=<?php echo $recipe["id"] ?>"></a>
                         </th>
                     </tr>
                 <?php }  //close the foreach ?>

@@ -29,23 +29,25 @@ try {
 
 <?php include "templates/html_head.php" ?>
 <?php include "templates/header.php"; ?>
-<h2>My Recipes
-    <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a>
-    <a class="glyphicon glyphicon-search" href="recipes/search.php"></a>
-</h2>
+
+<h1>My Recipes
+    <div class="actions">
+        <a class="glyphicon glyphicon-plus" href="recipes/add-recipe.php"></a>
+        <a class="glyphicon glyphicon-search" href="recipes/search.php"></a>
+    </div>
+</h1>
 <?php if ($result && $statement->rowCount() > 0) { ?>
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th>Recipe Name</th>
-            <th>Actions</th>
-        </tr>
+            <tr>
+                <th>Recipe Name</th>
+            </tr>
         </thead>
         <tbody>
         <?php foreach ($result as $row) { ?>
             <tr>
                 <th><?php echo $row['name']; ?></th>
-                <th>
+                <th class="actions">
                     <a class="glyphicon glyphicon-eye-open"
                        href="recipes/view-recipe.php?id=<?php echo $row["id"] ?>"></a>
                     <a class="glyphicon glyphicon-edit"

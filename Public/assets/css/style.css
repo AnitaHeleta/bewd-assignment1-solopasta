@@ -2,21 +2,112 @@ header div#user {
     float: right;
 }
 
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+/* -------------------------------------*/
+/* LOGIN - HEADINGS */
+/* -------------------------------------*/
+
+h1 {
+    margin-bottom: 20px;
+    color: black;
+    font-weight: 400;
+    font-size: 220%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: darkred;
+    font-weight: bold;
+    font-size: 200%;
+    word-spacing: 4px;
+    padding-top: 20px;
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: darkred;
+    font-weight: bold;
+    font-size: 150%;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+
+thead th {
+    font-size: 100%;
+    font-weight: 900;
+    color: darkred;
+}
+
+tbody th {
+    font-size: 100%;
+    font-weight: 500;
+
+
+}
+
+.row {
+    padding-top: 40px;
+    font-size: 80%;
+
+}
+
+.type {
+    color: dimgrey;
+    font-weight: bolder;
+    font-size: 16px;
+    text-transform: uppercase;
+
+}
+
+.type:after {
+    display: block;
+    height: 2px;
+    background-color: darkred;
+    content: " ";
+    width: auto;
+}
+
+.description {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 18px;
+    color: grey;
+    font-weight: bold;
+   }
+
+
 /* -------------------------------------*/
 /* LOGIN - REGISTER */
 /* -------------------------------------*/
 
 span#username{
-    font-style: italic;
-    font-weight: 900;
+    text-transform: uppercase;
 }
 
-div#login,div#register {
-    /*color: white;*/
+div#login,div#register{
+    color: white;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/heroimage.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
+    background-attachment: fixed;
+}
+
+header {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/heroimage.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
     background-attachment: fixed;
 }
 
@@ -43,26 +134,62 @@ div#login div.wrapper,div#register div.wrapper{
     padding-left: 15px;
 }
 /* -------------------------------------*/
-/* QUOTE
+/* USER
 /* -------------------------------------*/
 
-.quote {
-    min-width: 500px;
-    position: absolute;
-    text-align: left;
-    transform: translate(-50%, -50%);
-    font-size: 2.5rem
+#user {
+    padding-top: 120px;
 
 }
 
+
+/* -------------------------------------*/
+/*LINK STYLING*/
+/* -------------------------------------*/
+
+.glyphicon-erase, .glyphicon-log-out{
+    font-size: 100%;
+    color: red;
+    opacity: 70%;
+    padding: 0 18px 0 2px;
+}
+
+.glyphicon-erase {
+    padding: 0 6px 0 10px;
+}
+
+.glyphicon-eye-open, .glyphicon-edit, .glyphicon-remove {
+    font-size: 80%;
+    color: darkred;
+    opacity: 80%;
+    padding: 0 3px 0 10px;
+  
+}
+
+.actions {
+    float: right;
+}
+
+.glyphicon-search, .glyphicon-plus {
+    font-size: 60%;
+    color: darkred;
+    opacity: 80%;
+    padding: 0 3px 0 10px;
+    float: right;
+
+}
 
 /* -------------------------------------*/
 /* FOOTER */
 /* -------------------------------------*/
-
-footer{
-    position: fixed;
+footer {
+    font-size: 15px;
+    text-align: center;
+    background-color: darkred;
+    opacity: 100%;
+    color: white;
+    margin: 0;
     bottom: 0;
-    right: 0;
-    margin-right: 20px;
+    clear: both;
 }
+

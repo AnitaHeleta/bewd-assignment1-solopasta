@@ -30,18 +30,21 @@ if (isset($_GET['id'])) {
 <!-- HTML DOC-->
 <?php include "../templates/html_head.php"; ?>
 <?php include "../templates/header.php"; ?>
-
 <?php if ($recipe && $getRecipe->rowCount() == 1) { ?>
     <div class="row">
         <div class="col">
-            <h2><?php echo $recipe['name'] ?> </h2>
-            <p><?php echo $recipe['type']; ?></>
+            <h2><?php echo $recipe['name'] ?></h2>
+            <div class="type"
+            <p><?php echo $recipe['type']; ?></p>
+            </div>
+            <div class="description"
             <p><?php echo $recipe['description']; ?></p>
+            </div>
             <h3>Ingredients</h3>
             <ul>
                 <?php foreach ($ingredients as $ingredient) { ?>
                     <li>
-                        <?php echo $ingredient['quantity']; ?>
+                        <?php echo $ingredient['quantity'] + 0; ?>
                         <?php echo $ingredient['measurement']; ?> of
                         <?php echo $ingredient['ingredient']; ?>
                     </li>

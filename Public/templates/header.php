@@ -9,11 +9,8 @@ ensure_loggedIn();
         <div class="col">
             <header>
                 <a href="<?php echo normalize_url("index.php") ?>">
-                    <img id="logo" src="<?php echo normalize_url("assets/css/img/logocolour.png") ?>">
+                    <img id="logo" src="<?php echo normalize_url("assets/css/img/logo.png") ?>">
                 </a>
-                <div class="quote">
-                <p>"life is a combination of magic and pasta"</p>
-                </div>
                 <div id="user">
                     <span id="username"><?php echo htmlspecialchars($_SESSION["username"]); ?></span>
                     <a class="glyphicon glyphicon-erase"

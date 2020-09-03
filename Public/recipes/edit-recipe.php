@@ -67,28 +67,29 @@ if (isset($_GET['id'])) {
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" value="<?php echo escape($recipe['name']); ?>" type="text"
-                       value="" required="required" data-error="Please enter a recipe name">
+                       required="required" data-error="Please enter a recipe name">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
                 <input type="text" name="type" id="type" value="<?php echo escape($recipe['type']); ?>" type="text"
-                       value="" required="required" data-error="Please enter a type of recipe">
+                       required="required" data-error="Please enter a type of recipe">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
                 <br>
                 <textarea rows="5" cols="50" maxlength="250" name="description" id="description"
-                          placeholder="Description" <?php echo escape($recipe['description']); ?> type="text" value=""
-                          required="required" data-error="Please enter a description"></textarea>
+                          type="text"
+                          required="required" data-error="Please enter a description"><?php echo escape($recipe['description']); ?>
+                </textarea>
                 <div class="help-block with-errors"></div>
             </div>
             <h3>Ingredients</h3>
             <ul>
                 <?php foreach ($ingredients as $ingredient) { ?>
                     <li>
-                        <?php echo $ingredient['quantity']; ?>
+                        <?php echo $ingredient['quantity'] + 0; ?>
                         <?php echo $ingredient['measurement']; ?> of
                         <?php echo $ingredient['ingredient']; ?>
                         <a class="glyphicon glyphicon-remove"
@@ -99,7 +100,7 @@ if (isset($_GET['id'])) {
             <input type="hidden" name="recipe_id" value="<?php echo $id ?>">
             <input type="hidden" name="edit" value="true">
             <label for="quantity">Quantity</label>
-            <input type="number" name="quantity" id="quantity">
+            <input type="number" step="any" name="quantity" id="quantity">
             <label for="measurement">Measurement</label>
             <input type="text" name="measurement" id="measurement">
             <label for="ingredients">Ingredient</label>
@@ -111,12 +112,15 @@ if (isset($_GET['id'])) {
                    value="Add Ingredient">
             <h3>Process</h3>
             <div class="form-group">
-                <textarea rows="20" cols="50" maxlength="1000" name="directions" id="directions" placeholder="Process"
-                          type="text" value="<?php echo escape($recipe['directions']); ?>"
-                          required="required" data-error="Please enter the process."></textarea>
+                <textarea rows="20" cols="50" maxlength="1000" name="directions" id="directions"
+                          type="text"
+                          required="required" data-error="Please enter the process."><?php echo escape($recipe['directions']); ?></textarea>
                 <div class="help-block with-errors"></div>
             </div>
             <input type="submit" name="submit" value="Save Recipe">
+        </form>
+        <form>
+
         </form>
     </div>
 </div>
