@@ -6,7 +6,7 @@ if (isset($_GET['id'])) {
     try {
         $connection = new PDO($dsn, $username, $password, $options);
         $id = $_GET['id'];
-        $sql = "DELETE FROM recipes WHERE id = :id";
+        $sql = "DELETE FROM recipes WHERE id = :id; DELETE FROM recipe_ingredients where recipe_id = :id;";
         $statement = $connection->prepare($sql);
         $statement->bindValue(':id', $id);
         $statement->execute();
