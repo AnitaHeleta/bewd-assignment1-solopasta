@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         if($search_by == 'name'){
             $sql = "select r.id, r.name from recipes r where user_id = :userId AND name LIKE CONCAT('%', :name, '%')";
         }else{
-            $sql = "select distinct r.name, r.id from recipes r  join recipe_ingredients where user_id = :userId AND name LIKE CONCAT('%', :name, '%')";
+            $sql = "select distinct r.name, r.id from recipes r  join recipe_ingredients i on r.id = i.recipe_id where user_id = :userId AND ingredient LIKE CONCAT('%', :name, '%')";
         }
         $getRecipes = $connection->prepare($sql);
         $getRecipes->execute($search);
