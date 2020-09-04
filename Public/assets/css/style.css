@@ -86,14 +86,14 @@ tbody th {
 /* LOGIN - REGISTER */
 /* -------------------------------------*/
 
-span#username{
+span#username {
     text-transform: uppercase;
     color: white;
     font-style: italic;
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
-div#login,div#register{
+div#login, div#register {
     color: white;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/heroimage.jpg);
     background-size: cover;
@@ -111,7 +111,7 @@ header {
     background-attachment: fixed;
 }
 
-div#login div.wrapper,div#register div.wrapper{
+div#login div.wrapper, div#register div.wrapper {
     min-width: 500px;
     position: absolute;
     text-align: left;
@@ -126,7 +126,7 @@ div#login div.wrapper,div#register div.wrapper{
 /* LOGO */
 /* -------------------------------------*/
 
-#logo{
+#logo {
     height: 50px;
     width: auto;
     float: left;
@@ -170,9 +170,14 @@ div#login div.wrapper,div#register div.wrapper{
     padding: 0 3px 0 10px;
     float: right;
 }
+
 .actions a:hover {
     color: darkgreen;
-   text-decoration: none;
+    text-decoration: none;
+}
+
+.actions a:focus  {
+    color: darkred;
 }
 
 .actions {
