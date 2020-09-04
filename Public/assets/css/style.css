@@ -1,3 +1,4 @@
+
 header div#user {
     float: right;
 }
@@ -40,18 +41,15 @@ h3 {
     padding-top: 20px;
 }
 
-
 thead th {
     font-size: 100%;
-    font-weight: 900;
+    font-weight: bold;
     color: darkred;
 }
 
 tbody th {
     font-size: 100%;
     font-weight: 500;
-
-
 }
 
 .row {
@@ -82,8 +80,7 @@ tbody th {
     font-size: 18px;
     color: grey;
     font-weight: bold;
-   }
-
+}
 
 /* -------------------------------------*/
 /* LOGIN - REGISTER */
@@ -91,6 +88,9 @@ tbody th {
 
 span#username{
     text-transform: uppercase;
+    color: white;
+    font-style: italic;
+    font-weight:bolder;
 }
 
 div#login,div#register{
@@ -121,6 +121,7 @@ div#login div.wrapper,div#register div.wrapper{
     font-size: 2.5rem
 }
 
+
 /* -------------------------------------*/
 /* LOGO */
 /* -------------------------------------*/
@@ -133,24 +134,20 @@ div#login div.wrapper,div#register div.wrapper{
     margin-bottom: 20px;
     padding-left: 15px;
 }
-/* -------------------------------------*/
-/* USER
-/* -------------------------------------*/
 
 #user {
     padding-top: 120px;
 
 }
 
-
 /* -------------------------------------*/
 /*LINK STYLING*/
 /* -------------------------------------*/
 
-.glyphicon-erase, .glyphicon-log-out{
+.glyphicon-erase, .glyphicon-log-out {
     font-size: 100%;
-    color: red;
-    opacity: 70%;
+    color: white;
+    font-weight: bolder;
     padding: 0 18px 0 2px;
 }
 
@@ -163,11 +160,7 @@ div#login div.wrapper,div#register div.wrapper{
     color: darkred;
     opacity: 80%;
     padding: 0 3px 0 10px;
-  
-}
 
-.actions {
-    float: right;
 }
 
 .glyphicon-search, .glyphicon-plus {
@@ -176,7 +169,14 @@ div#login div.wrapper,div#register div.wrapper{
     opacity: 80%;
     padding: 0 3px 0 10px;
     float: right;
+}
+.actions a:hover {
+    color: darkgreen;
+   text-decoration: none;
+}
 
+.actions {
+    float: right;
 }
 
 /* -------------------------------------*/
